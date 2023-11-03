@@ -436,6 +436,9 @@ public class AllPatternAndPyramidProgram {
 		Scanner read = new Scanner(System.in);
 		System.out.print("Enter the number : ");
 		n = read.nextInt();
+
+		read.close();
+
 		printAllPattern(n);
 	}
 }

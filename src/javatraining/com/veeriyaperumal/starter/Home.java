@@ -24,12 +24,12 @@ public class Home {
 
 	private static boolean isValidChoice(String input, int totalOptionCount) {
 		if (!input.matches("[0-9]+")) {
-			System.out.println("Please enter the valid input.");
+			System.err.println("Please enter the valid input.");
 			return false;
 		}
 		int choice = Integer.parseInt(input);
 		if (choice > totalOptionCount || choice < 1) {
-			System.out.println("Please choose the valid option.");
+			System.err.println("Please choose the valid option.");
 			return false;
 		}
 		return true;
@@ -44,20 +44,23 @@ public class Home {
 
 		System.out.println("WELCOME TO MY PROGRAM");
 		do {
+			System.out.println("\n\n=======================================================\n");
+			    System.out.println("================    LIST OF PROGRAM   =================\n");
 			String[] listOfFiles = getFileName(directoryPath);
 			for (int i = 0; i < listOfFiles.length; i++) {
 				fileName = listOfFiles[i];
 				if (fileName.contains(".java")) {
-					System.out.println(i + 1 + "--->" + fileName.substring(0, fileName.indexOf('.')));
+					System.out.println(i + 1 + "  --->  " + fileName.substring(0, fileName.indexOf('.')));
 				} else {
-					System.out.println(i + 1 + "--->" + fileName);
+					System.out.println(i + 1 + "  --->  " + fileName.toUpperCase());
 				}
 				if (i + 1 == listOfFiles.length) {
 					if (filePathStack.size() == 1) {
-						System.out.println(i + 2 + "--->" + "Exit");
+						System.out.println(i + 2 + "  --->  " + "Exit");
 					} else {
-						System.out.println(i + 2 + "--->" + "Go back");
+						System.out.println(i + 2 + "  --->  " + "Go back");
 					}
+					System.out.println("\n=======================================================\n");
 				}
 
 			}
@@ -92,13 +95,15 @@ public class Home {
 		} while (true);
 
 	}
-	
+
 	private static void executeProgram(String directoryPath, String className)
 			throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		int index = directoryPath.indexOf("\\src\\");
 		directoryPath = directoryPath.substring(index + 5) + "." + className.substring(0, className.lastIndexOf('.'));
 		directoryPath = directoryPath.replace("\\", ".");
-
+		System.out.println("=======================================================\n");
+		System.out.println("          " + (className.substring(0, className.lastIndexOf('.'))).toUpperCase() + "\n");
+		
 		try {
 			Class obj = Class.forName(directoryPath);
 			try {
@@ -111,9 +116,12 @@ public class Home {
 
 		} catch (ClassNotFoundException e) {
 			System.out.println("That program doesn't exist.");
+		} finally {
+			System.out.println("\n=======================================================");
 		}
+
 		return;
 
 	}
-	
+
 }

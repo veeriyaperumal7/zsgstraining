@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author ELCOT
- *
- */
-module javatraining {
-}

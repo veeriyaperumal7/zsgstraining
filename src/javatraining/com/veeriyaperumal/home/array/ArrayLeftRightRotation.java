@@ -1,7 +1,7 @@
 package javatraining.com.veeriyaperumal.home.array;
-
 import java.util.Arrays;
 import java.util.Scanner;
+
 
 public class ArrayLeftRightRotation {
 	private static int arr[];

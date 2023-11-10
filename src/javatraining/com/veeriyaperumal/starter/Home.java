@@ -64,7 +64,6 @@ public class Home {
 					}
 					System.out.println("\n=======================================================\n");
 				}
-
 			}
 			System.out.print("Choose the above given choices : ");
 			choice = read.nextInt();

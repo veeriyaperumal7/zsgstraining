@@ -29,7 +29,7 @@ public class Question1 {
 	      }
 		}
 
-		private static void fillPattern(int[][] pattern, int number) {
+	private static void fillPattern(int[][] pattern, int number) {
 			int row=number-1,startRow=0,startColumn=0,endColumn=number-1,num=1;
 			while(startRow<=row || startColumn<=endColumn) {
 			for(int i=0;i<=row;i++) {

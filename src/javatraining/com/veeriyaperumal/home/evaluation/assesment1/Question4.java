@@ -7,6 +7,7 @@ public class Question4 {
 		main(arr);
 	}
 	
+	
 	public static void main(String[] args) {
 	Scanner read = new Scanner(System.in);
 	System.out.print("Enter the string : ");

@@ -54,5 +54,4 @@ public class Question3 {
 		}
 		return true;
 	}
-
 }

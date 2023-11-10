@@ -44,7 +44,7 @@ public class Home {
 		filePathStack.push(directoryPath);
 
 		System.out.println("WELCOME TO MY PROGRAM");
-		do {
+		do { 
 			System.out.println("\n\n=======================================================\n");
 			    System.out.println("================    LIST OF PROGRAM   =================\n");
 			String[] listOfFiles = getFileName(directoryPath);

@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Question1 {
 
 	public static void myMain() {
-		String arr[] = null;
+		String arr[] = null; 
 		main(arr);
 	}
 	public static void main(String[] args) {

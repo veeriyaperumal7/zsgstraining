@@ -1,0 +1,152 @@
+{
+  "1": {
+    "Company Name": [
+      "1.TVS",
+      "2.YAMAHA",
+      "3.BAJAJ",
+      "4.HERO"
+    ]
+  },
+  "2": {
+    "Bike Segment": [
+      "1.Sports Bikes",
+      "2.Standard Bikes",
+      "3.Scooters",
+      "4.Economy Bikes"
+    ]
+  },
+  "3": {
+    "11": [
+      "1.TVS Apache RR 310",
+      "2.TVS Apache RTR 200 4V",
+      "3.TVS Apache RTR 160 4V"
+    ],
+    "12": [
+      "1.TVS Radeon",
+      "2.TVS Star City Plus",
+      "3.TVS Victor"
+    ],
+    "13": [
+      "1.TVS Jupiter",
+      "2.TVS Ntorq 125",
+      "3.TVS Scooty Zest 110"
+    ],
+    "14": [
+      "1.TVS Sport",
+      "2.TVS Star City+",
+      "3.TVS XL 100"
+    ],
+    "21": [
+      "1.Yamaha YZF-R1",
+      "2.Yamaha YZF-R6",
+      "3.Yamaha YZF-R3"
+    ],
+    "22": [
+      "1.Yamaha FZS V3",
+      "2.Yamaha FZ V3",
+      "3.Yamaha MT-15"
+    ],
+    "23": [
+      "1.Yamaha Fascino 125",
+      "2.Yamaha RayZR 125",
+      "3.Yamaha Cygnus Ray ZR Street Rally 125 Fi"
+    ],
+    "24": [
+      "1.Yamaha Saluto RX:",
+      "2.Yamaha SZ-RR V3",
+      "3.Yamaha Saluto 125"
+    ],
+    "31": [
+      "1.Bajaj Dominar 400",
+      "2.Bajaj Pulsar 220F",
+      "3.Bajaj Pulsar NS160"
+    ],
+    "32": [
+      "1.Bajaj Pulsar RS200",
+      "2.Bajaj Pulsar NS200",
+      "3.Bajaj Pulsar 150"
+    ],
+    "33": [
+      "1.Bajaj Fusion",
+      "2.Bajaj Kristal",
+      "3.Bajaj Wave",
+      "4.Bajaj Chetak 4S"
+    ],
+    "34": [
+      "1.Bajaj Discover 125",
+      "2.Bajaj Platina 100",
+      "3.Bajaj CT100"
+    ],
+    "41": [
+      "1.Hero Xtreme 160R BS6",
+      "2.Hero Xtreme 160R 4V",
+      "3.Hero Karizma XMR"
+    ],
+    "42": [
+      "1.Hero Glamour",
+      "2.Hero Splendor Plus",
+      "3.Hero HF Deluxe"
+    ],
+    "43": [
+      "1.Hero Maestro Edge 125",
+      "2.Hero Pleasure Plus",
+      "3.Hero Destini 125"
+    ],
+    "44": [
+      "1.Hero Splendor iSmart",
+      "2.Hero Passion Pro",
+      "3.Hero HF Deluxe i3s"
+    ]
+  },
+  "4": {
+    "TVS Apache RR 310": "Mileage: Around 30-35 km/l (approximate)\nEngine Displacement (CC): 312.2 cc\nColors: Typically available in multiple colors, including racing red, phantom black, and white.\nPrice (Approximate in India): ₹2.5 to ₹2.7 lakhs (ex-showroom)",
+    "TVS Apache RTR 200 4V": "Mileage: Around 40-45 km/l (approximate)\nEngine Displacement (CC): 197.75 cc\nColors: Varied color options, including matte blue, matte red, and matte black.\nPrice (Approximate in India): ₹1.3 to ₹1.5 lakhs (ex-showroom)",
+    "TVS Apache RTR 160 4V": "Mileage: Around 45-50 km/l (approximate)\nEngine Displacement (CC): 159.7 cc\nColors: Available in several colors such as racing red, knight black, and metallic blue.\nPrice (Approximate in India): ₹1.1 to ₹1.3 lakhs (ex-showroom)",
+    "TVS Radeon": "Mileage: Around 55-60 km/l (approximate)\nEngine Displacement (CC): 109.7 cc\nColors: Available in various colors, including white, black, purple, and more.\nPrice (Approximate in India): ₹59,742 to ₹65,742 (ex-showroom)",
+    "TVS Star City Plus": "Mileage: Around 70-75 km/l (approximate)\nEngine Displacement (CC): 109.7 cc\nColors: Multiple color options, such as black, blue, grey, and red.\nPrice (Approximate in India): ₹64,109 to ₹68,109 (ex-showroom)",
+    "TVS Victor": "Mileage: Around 60-65 km/l (approximate)\nEngine Displacement (CC): 109.7 cc\nColors: Available in attractive colors like red, black, silver, and blue.\nPrice (Approximate in India): ₹59,490 to ₹64,990 (ex-showroom)",
+    "TVS Jupiter": "Mileage: Around 50-55 km/l (approximate)\nEngine Displacement (CC): 109.7 cc\nColors: Multiple color options, including matte blue, matte silver, and matte black.\nPrice (Approximate in India): ₹65,673 to ₹72,473 (ex-showroom)",
+    "TVS Ntorq 125": "Mileage: Around 45-50 km/l (approximate)\nEngine Displacement (CC): 124.8 cc\nColors: Vibrant colors like racing red, metallic blue, and matte yellow.\nPrice (Approximate in India): ₹73,247 to ₹79,247 (ex-showroom)",
+    "TVS Scooty Zest 110": "Mileage: Around 55-60 km/l (approximate)\nEngine Displacement (CC): 109.7 cc\nColors: Available in appealing colors like matte black, turquoise blue, and matte red.\nPrice (Approximate in India): ₹63,991 to ₹70,491 (ex-showroom)",
+    "TVS Sport": "Mileage: Around 70-75 km/l (approximate)\nEngine Displacement (CC): 109.7 cc\nColors: Variants like black silver, black red, and white purple.\nPrice (Approximate in India): ₹56,100 to ₹62,950 (ex-showroom)",
+    "TVS Star City+": "Mileage: Around 70-75 km/l (approximate)\nEngine Displacement (CC): 109.7 cc\nColors: Options like black red, grey black, and titanium grey.\nPrice (Approximate in India): ₹66,895 to ₹73,595 (ex-showroom)",
+    "TVS XL 100": "Mileage: Around 55-60 km/l (approximate)\nEngine Displacement (CC): 99.7 cc\nColors: Available in various color options.\nPrice (Approximate in India): ₹47,255 to ₹53,155 (ex-showroom)",
+    "Yamaha YZF-R1": "Mileage: Around 15-20 km/l (approximate)\nEngine Displacement (CC): 998 cc\nColors: Icon Blue, Raven Black.\nPrice (Approximate in India): ₹20.39 lakhs (ex-showroom)",
+    "Yamaha YZF-R6": "Mileage: Around 20-25 km/l (approximate)\nEngine Displacement (CC): 599 cc\nColors: Team Yamaha Blue, Vivid Orange.\nPrice (Approximate in India): ₹16.64 lakhs (ex-showroom)",
+    "Yamaha YZF-R3": "Mileage: Around 25-30 km/l (approximate)\nEngine Displacement (CC): 321 cc\nColors: Racing Blue, Magma Black.\nPrice (Approximate in India): ₹3.5 lakhs (ex-showroom)",
+    "Yamaha FZS V3": "Mileage: Around 45-50 km/l (approximate)\nEngine Displacement (CC): 149 cc\nColors: Dark Matte Blue, Metallic Red.\nPrice (Approximate in India): ₹1.05 to ₹1.09 lakhs (ex-showroom)",
+    "Yamaha FZ V3": "Mileage: Around 45-50 km/l (approximate)\nEngine Displacement (CC): 149 cc\nColors: Racing Blue, Thunder Grey.\nPrice (Approximate in India): ₹1.03 to ₹1.07 lakhs (ex-showroom)",
+    "Yamaha MT-15": "Mileage: Around 40-45 km/l (approximate)\nEngine Displacement (CC): 155 cc\nColors: Dark Matte Blue, Metallic Black.\nPrice (Approximate in India): ₹1.45 to ₹1.49 lakhs (ex-showroom)",
+    "Yamaha Fascino 125": "Mileage: Around 50-55 km/l (approximate)\nEngine Displacement (CC): 125 cc\nColors: Suave Copper, Dapper Blue.\nPrice (Approximate in India): ₹73,630 to ₹76,130 (ex-showroom)",
+    "Yamaha RayZR 125": "Mileage: Around 45-50 km/l (approximate)\nEngine Displacement (CC): 125 cc\nColors: Cyan Blue, Matte Green.\nPrice (Approximate in India): ₹77,070 to ₹79,570 (ex-showroom)",
+    "Yamaha Cygnus Ray ZR Street Rally 125 Fi": "Mileage: Around 45-50 km/l (approximate)\nEngine Displacement (CC): 125 cc\nColors: Rally Red, Racing Blue.\nPrice (Approximate in India): ₹76,330 to ₹78,830 (ex-showroom)",
+    "Yamaha Saluto RX": "Mileage: Around 60-65 km/l (approximate)\nEngine Displacement (CC): 110 cc\nColors: Breezy Blue, Inspiring Red.\nPrice (Approximate in India): ₹60,730 to ₹62,730 (ex-showroom)",
+    "Yamaha SZ-RR V3": "Mileage: Around 55-60 km/l (approximate)\nEngine Displacement (CC): 149 cc\nColors: Racing Blue, Metallic Black.\nPrice (Approximate in India): ₹73,530 to ₹75,530 (ex-showroom)",
+    "Yamaha Saluto 125": "Mileage: Around 60-65 km/l (approximate)\nEngine Displacement (CC): 125 cc\nColors: Matt Green, Brave Black.\nPrice (Approximate in India): ₹75,330 to ₹77,330 (ex-showroom)",
+    "Bajaj Dominar 400": "Mileage: Around 25-30 km/l (approximate)\nEngine Displacement (CC): 373.3 cc\nColors: Aurora Green, Vine Black.\nPrice (Approximate in India): ₹2.15 to ₹2.25 lakhs (ex-showroom)",
+    "Bajaj Pulsar 220F": "Mileage: Around 35-40 km/l (approximate)\nEngine Displacement (CC): 220 cc\nColors: Laser Black, Nuclear Blue.\nPrice (Approximate in India): ₹1.25 to ₹1.35 lakhs (ex-showroom)",
+    "Bajaj Pulsar NS160": "Mileage: Around 40-45 km/l (approximate)\nEngine Displacement (CC): 160.3 cc\nColors: Passion Red, Pearl White.\nPrice (Approximate in India): ₹1.10 to ₹1.15 lakhs (ex-showroom)",
+    "Bajaj Pulsar RS200": "Mileage: Around 35-40 km/l (approximate)\nEngine Displacement (CC): 199.5 cc\nColors: Racing Blue, Graphite Black.\nPrice (Approximate in India): ₹1.70 to ₹1.80 lakhs (ex-showroom)",
+    "Bajaj Pulsar NS200": "Mileage: Around 35-40 km/l (approximate)\nEngine Displacement (CC): 199.5 cc\nColors: Wild Red, Mirage White.\nPrice (Approximate in India): ₹1.35 to ₹1.45 lakhs (ex-showroom)",
+    "Bajaj Pulsar 150": "Mileage: Around 45-50 km/l (approximate)\nEngine Displacement (CC): 149 cc\nColors: Black Blue, Black Red.\nPrice (Approximate in India): ₹1.05 to ₹1.10 lakhs (ex-showroom)",
+    "Bajaj Fusion": "Mileage: Around 55-60 km/l (approximate)\nEngine Displacement (CC): 135 cc\nColors: Available in various colors.\nPrice (Approximate in India): ₹50,000 to ₹55,000 (ex-showroom)",
+    "Bajaj Kristal": "Mileage: Around 45-50 km/l (approximate)\nEngine Displacement (CC): 125 cc\nColors: Multiple color options.\nPrice (Approximate in India): ₹45,000 to ₹50,000 (ex-showroom)",
+    "Bajaj Wave": "Mileage: Around 50-55 km/l (approximate)\nEngine Displacement (CC): 110 cc\nColors: Available in various colors.\nPrice (Approximate in India): ₹40,000 to ₹45,000 (ex-showroom)",
+    "Bajaj Chetak 4S": "Mileage: Around 45-50 km/l (approximate)\nEngine Displacement (CC): 125 cc\nColors: Multiple color options.\nPrice (Approximate in India): ₹55,000 to ₹60,000 (ex-showroom)",
+    "Bajaj Discover 125": "Mileage: Around 55-60 km/l (approximate)\nEngine Displacement (CC): 124.6 cc\nColors: Black Blue, Black Red.\nPrice (Approximate in India): ₹65,000 to ₹70,000 (ex-showroom)",
+    "Bajaj Platina 100": "Mileage: Around 75-80 km/l (approximate)\nEngine Displacement (CC): 102 cc\nColors: Black, Red.\nPrice (Approximate in India): ₹50,000 to ₹55,000 (ex-showroom)",
+    "Bajaj CT100": "Mileage: Around 80-85 km/l (approximate)\nEngine Displacement (CC): 102 cc\nColors: Available in various colors.\nPrice (Approximate in India): ₹40,000 to ₹45,000 (ex-showroom)",
+    "Hero Xtreme 160R BS6": "Mileage: Around 45-50 km/l (approximate)\nEngine Displacement (CC): 163 cc\nColors: Vibrant color options like vibrant blue, sports red, and techno blue.\nPrice (Approximate in India): ₹1.10 to ₹1.20 lakhs (ex-showroom)",
+    "Hero Xtreme 160R 4V": "Mileage: Around 45-50 km/l (approximate)\nEngine Displacement (CC): 160 cc\nColors: Available in several colors including vibrant blue, sports red, and techno blue.\nPrice (Approximate in India): ₹1.10 to ₹1.20 lakhs (ex-showroom)",
+    "Hero Karizma XMR": "Mileage: Around 35-40 km/l (approximate)\nEngine Displacement (CC): 223 cc\nColors: Panther Black, Cryogenic Blue.\nPrice (Approximate in India): ₹1.30 to ₹1.40 lakhs (ex-showroom)",
+    "Hero Glamour": "Mileage: Around 55-60 km/l (approximate)\nEngine Displacement (CC): 125 cc\nColors: Varied color options such as candy blaze red, techno blue.\nPrice (Approximate in India): ₹75,700 to ₹80,700 (ex-showroom)",
+    "Hero Splendor Plus": "Mileage: Around 65-70 km/l (approximate)\nEngine Displacement (CC): 97.2 cc\nColors: Options like black with silver, black with purple, and red.\nPrice (Approximate in India): ₹63,300 to ₹68,300 (ex-showroom)",
+    "Hero HF Deluxe": "Mileage: Around 65-70 km/l (approximate)\nEngine Displacement (CC): 97.2 cc\nColors: Choices like techno blue, black with red.\nPrice (Approximate in India): ₹58,500 to ₹63,500 (ex-showroom)",
+    "Hero Maestro Edge 125": "Mileage: Around 50-55 km/l (approximate)\nEngine Displacement (CC): 125 cc\nColors: Multiple color options, including red, white, and black.\nPrice (Approximate in India): ₹71,450 to ₹75,950 (ex-showroom)",
+    "Hero Pleasure Plus": "Mileage: Around 45-50 km/l (approximate)\nEngine Displacement (CC): 110.9 cc\nColors: Available in various vibrant colors like matte green, matte red, and matte blue.\nPrice (Approximate in India): ₹58,500 to ₹62,500 (ex-showroom)",
+    "Hero Destini 125": "Mileage: Around 50-55 km/l (approximate)\nEngine Displacement (CC): 124.6 cc\nColors: Offered in attractive colors like red, black, and silver.\nPrice (Approximate in India): ₹66,310 to ₹70,310 (ex-showroom)",
+    "Hero Splendor iSmart": "Mileage: Around 65-70 km/l (approximate)\nEngine Displacement (CC): 113.2 cc\nColors: Available in various shades, including red, blue, and silver.\nPrice (Approximate in India): ₹67,900 to ₹71,900 (ex-showroom)",
+    "Hero Passion Pro": "Mileage: Around 60-65 km/l (approximate)\nEngine Displacement (CC): 113.2 cc\nColors: Multiple color options, such as red, black, and silver.\nPrice (Approximate in India): ₹69,600 to ₹73,600 (ex-showroom)",
+    "Hero HF Deluxe i3s": "Mileage: Around 65-70 km/l (approximate)\nEngine Displacement (CC): 97.2 cc\nColors: Offered in various colors, including red, black, and blue.\nPrice (Approximate in India): ₹57,700 to ₹61,700 (ex-showroom)"
+  }
+}

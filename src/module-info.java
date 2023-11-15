@@ -6,4 +6,5 @@
  *
  */
 module javatraining {
+	requires json.simple;
 }

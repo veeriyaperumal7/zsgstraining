@@ -1,7 +1,7 @@
 package javatraining.com.veeriyaperumal.home.array;
+
 import java.util.Arrays;
 import java.util.Scanner;
-
 
 public class ArrayLeftRightRotation {
 	private static int arr[];
@@ -20,7 +20,6 @@ public class ArrayLeftRightRotation {
 	}
 
 	private static void rotateArrayLeft() {
-		Arrays.sort(arr);
 		if (rotationCount > arr.length) {
 			rotationCount = rotationCount % arr.length;
 		}
@@ -32,13 +31,12 @@ public class ArrayLeftRightRotation {
 	}
 
 	private static void rotateArrayRight() {
-		Arrays.sort(arr);
 		if (rotationCount > arr.length) {
 			rotationCount = rotationCount % arr.length;
 		}
 		swapArrayElements(1, arr.length);
 		swapArrayElements(1, rotationCount);
-		swapArrayElements(rotationCount+1 , arr.length);
+		swapArrayElements(rotationCount + 1, arr.length);
 		System.out.print("\nArray after right rotation : ");
 		printArray();
 	}
@@ -66,5 +64,9 @@ public class ArrayLeftRightRotation {
 		printArray();
 		rotateArrayLeft();
 		rotateArrayRight();
+	}
+
+	public static void main(String[] args) {
+		myMain();
 	}
 }

@@ -38,7 +38,7 @@ public class ArrayLeftRotation {
 		swapArrayElements(1, getRotationCount());
 		swapArrayElements(getRotationCount() + 1, arr.length);
 		swapArrayElements(1, arr.length);
-		System.out.print("\nArray after left rotation 1: ");
+		System.out.print("\nArray after left rotation : ");
 		printArray();
 	}
 
@@ -54,11 +54,11 @@ public class ArrayLeftRotation {
 			arr[arr.length - 1] = temp;
 			rotationCount--;
 		}
-		System.out.print("\nArray after left rotation 2: ");
+		System.out.print("\nArray after left rotation : ");
 		printArray();
 	}
 
-	private void rotateArrayLeftApproach3() { // Approach 2 work bases on take one extra array and put value by based on
+	private void rotateArrayLeftApproach3() { // Approach 3 work bases on take one extra array and put value by based on
 												// rotationCount.
 												// O(n)time and O(n)space complexity.
 		int index, i = 0;
@@ -75,7 +75,7 @@ public class ArrayLeftRotation {
 			}
 			arr = resultArray;
 		}
-		System.out.print("\nArray after left rotation 3: ");
+		System.out.print("\nArray after left rotation : ");
 		printArray();
 	}
 

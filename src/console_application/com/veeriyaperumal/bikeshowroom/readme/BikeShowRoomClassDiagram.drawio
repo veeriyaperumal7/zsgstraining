@@ -1,0 +1,86 @@
+<mxfile host="app.diagrams.net" modified="2023-12-05T10:28:48.062Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="BqUU7ABl9TggwqkaXdpu" version="22.1.5" type="device">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="2587" dy="1916" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="zkfFHV4jXpPFQw0GAbJ--0" value="BikeViewModel" style="swimlane;fontStyle=2;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;fontSize=18;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="-30" y="-1130" width="501" height="350" as="geometry">
+            <mxRectangle x="230" y="140" width="160" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zkfFHV4jXpPFQw0GAbJ--1" value="    private Bike bike;&#xa;    private BikeShowroomView showRoomView;&#xa;    private Stack&lt;UserOption&gt; chatHistory;&#xa;    private List&lt;String&gt; menuList;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" parent="zkfFHV4jXpPFQw0GAbJ--0" vertex="1">
+          <mxGeometry y="26" width="501" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="f1AwuQUyPbNZa008li1x-1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="zkfFHV4jXpPFQw0GAbJ--0">
+          <mxGeometry y="110" width="501" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="f1AwuQUyPbNZa008li1x-11" value="public BikeViewModel(BikeShowroomView bikeShowroomView)&#xa;private void dePromoteLevel()&#xa;private void promoteLevel(int choice)&#xa;private void clearChat()&#xa;public UserOption getTopOfChatHistory()&#xa;public List&lt;String&gt; getChoices()&#xa;public void showBikeData(String bikeData)&#xa;public boolean validateInput(int userEnteredChoice)&#xa;public void chooseLevel(int userEnteredInput)&#xa;public void terminateProgramWithMessage(String errorMessage)" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1" parent="zkfFHV4jXpPFQw0GAbJ--0">
+          <mxGeometry y="118" width="501" height="232" as="geometry" />
+        </mxCell>
+        <mxCell id="f1AwuQUyPbNZa008li1x-12" value="BikeShowroomView" style="swimlane;fontStyle=2;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;fontSize=18;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="-610" y="-1120" width="501" height="440" as="geometry">
+            <mxRectangle x="230" y="140" width="160" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f1AwuQUyPbNZa008li1x-13" value="    private Scanner read = new Scanner(System.in);&#xa;    private Bike bike;&#xa;    private BikeViewModel bikeViewModel;&#xa;&#xa;    //// ANSI escape codes for formatting color in console&#xa;    private static final String RESET = &quot;\u001B[0m&quot;;&#xa;    private static final String GREEN = &quot;\u001B[32m&quot;;&#xa;    private static final String YELLOW = &quot;\u001B[33m&quot;;&#xa;    private static final String CYAN = &quot;\u001B[36m&quot;;&#xa;    private static final String BOLD = &quot;\u001B[1m&quot;;&#xa;    private static final String ROSECOLOR = &quot;\u001B[38;5;207m&quot;;&#xa;    private static final String RED = &quot;\u001B[31m&quot;;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1" parent="f1AwuQUyPbNZa008li1x-12">
+          <mxGeometry y="26" width="501" height="254" as="geometry" />
+        </mxCell>
+        <mxCell id="f1AwuQUyPbNZa008li1x-14" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="f1AwuQUyPbNZa008li1x-12">
+          <mxGeometry y="280" width="501" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="f1AwuQUyPbNZa008li1x-15" value="public BikeShowroomView()&#xa;public static void main(String[] args)&#xa;private void start()&#xa;public boolean printChoices(List&lt;String&gt; choices)&#xa;public void printBikeData(String bikeData)&#xa;public int getUserInput()&#xa;public void printErrorMessage(String errorMessage)" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;spacing=2;" vertex="1" parent="f1AwuQUyPbNZa008li1x-12">
+          <mxGeometry y="288" width="501" height="152" as="geometry" />
+        </mxCell>
+        <mxCell id="f1AwuQUyPbNZa008li1x-16" value="Repository" style="swimlane;fontStyle=2;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;fontSize=18;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="530" y="-1130" width="630" height="360" as="geometry">
+            <mxRectangle x="230" y="140" width="160" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f1AwuQUyPbNZa008li1x-17" value="private static Repository repository;&#xa;private BikeViewModel bikeViewModel;&#xa;private static JSONObject jsonObject;&#xa;private List&lt;String&gt; companyNameList, bikeSegmentList, bikesList, bikeDataList;&#xa;private String bikeData;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1" parent="f1AwuQUyPbNZa008li1x-16">
+          <mxGeometry y="26" width="630" height="114" as="geometry" />
+        </mxCell>
+        <mxCell id="f1AwuQUyPbNZa008li1x-18" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="f1AwuQUyPbNZa008li1x-16">
+          <mxGeometry y="140" width="630" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="f1AwuQUyPbNZa008li1x-19" value="private Repository()&#xa;public static Repository getInstance(BikeViewModel bikeViewModel)&#xa;public List&lt;String&gt; getMenus()&#xa;private void fetchData()&#xa;private void fetchBikeCompanyName()&#xa;private void fetchBikeSegmentName()&#xa;private void fetchBikeName()&#xa;private void fetchBikeData()&#xa;private void copyJsonArrayToList(JSONArray jsonArray, List&lt;String&gt; list)&#xa;private void getJsonObject()" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;spacing=2;" vertex="1" parent="f1AwuQUyPbNZa008li1x-16">
+          <mxGeometry y="148" width="630" height="202" as="geometry" />
+        </mxCell>
+        <mxCell id="f1AwuQUyPbNZa008li1x-28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="f1AwuQUyPbNZa008li1x-20" target="f1AwuQUyPbNZa008li1x-11">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="230" y="-770" />
+              <mxPoint x="230" y="-770" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f1AwuQUyPbNZa008li1x-20" value="UserOption" style="swimlane;fontStyle=2;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;fontSize=18;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="-60" y="-710" width="630" height="250" as="geometry">
+            <mxRectangle x="230" y="140" width="160" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f1AwuQUyPbNZa008li1x-21" value="private int level;&#xa;private String option, bikeName;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1" parent="f1AwuQUyPbNZa008li1x-20">
+          <mxGeometry y="26" width="630" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="f1AwuQUyPbNZa008li1x-22" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="f1AwuQUyPbNZa008li1x-20">
+          <mxGeometry y="80" width="630" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="f1AwuQUyPbNZa008li1x-23" value="public UserOption(int evel, String option)&#xa;public UserOption(int level, String option, String bikeName)&#xa;public int getLevel()&#xa;public void setLevel(int level)&#xa;public String getOption()&#xa;public void setOption(String option)&#xa;public String getBikeName()&#xa;public void setBikeName(String bikeName)" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;spacing=2;" vertex="1" parent="f1AwuQUyPbNZa008li1x-20">
+          <mxGeometry y="88" width="630" height="162" as="geometry" />
+        </mxCell>
+        <mxCell id="f1AwuQUyPbNZa008li1x-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.007;entryY=0.07;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="f1AwuQUyPbNZa008li1x-13" target="f1AwuQUyPbNZa008li1x-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f1AwuQUyPbNZa008li1x-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1.001;entryY=0.692;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="f1AwuQUyPbNZa008li1x-11" target="f1AwuQUyPbNZa008li1x-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f1AwuQUyPbNZa008li1x-29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="f1AwuQUyPbNZa008li1x-19" target="f1AwuQUyPbNZa008li1x-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f1AwuQUyPbNZa008li1x-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="zkfFHV4jXpPFQw0GAbJ--1" target="f1AwuQUyPbNZa008li1x-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

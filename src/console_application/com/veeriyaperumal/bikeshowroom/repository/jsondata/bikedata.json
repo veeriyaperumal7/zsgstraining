@@ -1,101 +1,101 @@
 {
   "1": {
     "Company Name": [
-      "1.TVS",
-      "2.YAMAHA",
-      "3.BAJAJ",
-      "4.HERO"
+      "TVS",
+      "YAMAHA",
+      "BAJAJ",
+      "HERO"
     ]
   },
   "2": {
     "Bike Segment": [
-      "1.Sports Bikes",
-      "2.Standard Bikes",
-      "3.Scooters",
-      "4.Economy Bikes"
+      "Sports Bikes",
+      "Standard Bikes",
+      "Scooters",
+      "Economy Bikes"
     ]
   },
   "3": {
     "11": [
-      "1.TVS Apache RR 310",
-      "2.TVS Apache RTR 200 4V",
-      "3.TVS Apache RTR 160 4V"
+      "TVS Apache RR 310",
+      "TVS Apache RTR 200 4V",
+      "TVS Apache RTR 160 4V"
     ],
     "12": [
-      "1.TVS Radeon",
-      "2.TVS Star City Plus",
-      "3.TVS Victor"
+      "TVS Radeon",
+      "TVS Star City Plus",
+      "TVS Victor"
     ],
     "13": [
-      "1.TVS Jupiter",
-      "2.TVS Ntorq 125",
-      "3.TVS Scooty Zest 110"
+      "TVS Jupiter",
+      "TVS Ntorq 125",
+      "TVS Scooty Zest 110"
     ],
     "14": [
-      "1.TVS Sport",
-      "2.TVS Star City+",
-      "3.TVS XL 100"
+      "TVS Sport",
+      "TVS Star City+",
+      "TVS XL 100"
     ],
     "21": [
-      "1.Yamaha YZF-R1",
-      "2.Yamaha YZF-R6",
-      "3.Yamaha YZF-R3"
+      "Yamaha YZF-R1",
+      "Yamaha YZF-R6",
+      "Yamaha YZF-R3"
     ],
     "22": [
-      "1.Yamaha FZS V3",
-      "2.Yamaha FZ V3",
-      "3.Yamaha MT-15"
+      "Yamaha FZS V3",
+      "Yamaha FZ V3",
+      "Yamaha MT-15"
     ],
     "23": [
-      "1.Yamaha Fascino 125",
-      "2.Yamaha RayZR 125",
-      "3.Yamaha Cygnus Ray ZR Street Rally 125 Fi"
+      "Yamaha Fascino 125",
+      "Yamaha RayZR 125",
+      "Yamaha Cygnus Ray ZR Street Rally 125 Fi"
     ],
     "24": [
-      "1.Yamaha Saluto RX:",
-      "2.Yamaha SZ-RR V3",
-      "3.Yamaha Saluto 125"
+      "Yamaha Saluto RX:",
+      "Yamaha SZ-RR V3",
+      "Yamaha Saluto 125"
     ],
     "31": [
-      "1.Bajaj Dominar 400",
-      "2.Bajaj Pulsar 220F",
-      "3.Bajaj Pulsar NS160"
+      "Bajaj Dominar 400",
+      "Bajaj Pulsar 220F",
+      "Bajaj Pulsar NS160"
     ],
     "32": [
-      "1.Bajaj Pulsar RS200",
-      "2.Bajaj Pulsar NS200",
-      "3.Bajaj Pulsar 150"
+      "Bajaj Pulsar RS200",
+      "Bajaj Pulsar NS200",
+      "Bajaj Pulsar 150"
     ],
     "33": [
-      "1.Bajaj Fusion",
-      "2.Bajaj Kristal",
-      "3.Bajaj Wave",
-      "4.Bajaj Chetak 4S"
+      "Bajaj Fusion",
+      "Bajaj Kristal",
+      "Bajaj Wave",
+      "Bajaj Chetak 4S"
     ],
     "34": [
-      "1.Bajaj Discover 125",
-      "2.Bajaj Platina 100",
-      "3.Bajaj CT100"
+      "Bajaj Discover 125",
+      "Bajaj Platina 100",
+      "Bajaj CT100"
     ],
     "41": [
-      "1.Hero Xtreme 160R BS6",
-      "2.Hero Xtreme 160R 4V",
-      "3.Hero Karizma XMR"
+      "Hero Xtreme 160R BS6",
+      "Hero Xtreme 160R 4V",
+      "Hero Karizma XMR"
     ],
     "42": [
-      "1.Hero Glamour",
-      "2.Hero Splendor Plus",
-      "3.Hero HF Deluxe"
+      "Hero Glamour",
+      "Hero Splendor Plus",
+      "Hero HF Deluxe"
     ],
     "43": [
-      "1.Hero Maestro Edge 125",
-      "2.Hero Pleasure Plus",
-      "3.Hero Destini 125"
+      "Hero Maestro Edge 125",
+      "Hero Pleasure Plus",
+      "Hero Destini 125"
     ],
     "44": [
-      "1.Hero Splendor iSmart",
-      "2.Hero Passion Pro",
-      "3.Hero HF Deluxe i3s"
+      "Hero Splendor iSmart",
+      "Hero Passion Pro",
+      "Hero HF Deluxe i3s"
     ]
   },
   "4": {

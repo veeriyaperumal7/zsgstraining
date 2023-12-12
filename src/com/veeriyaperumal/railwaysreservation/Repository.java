@@ -1,4 +1,4 @@
-package com.veeriyaperumal.repository;
+package com.veeriyaperumal.railwaysreservation;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

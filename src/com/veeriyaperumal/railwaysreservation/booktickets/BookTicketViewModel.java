@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import com.veeriyaperumal.railwaysreservation.dto.Train;
 import com.veeriyaperumal.railwaysreservation.util.Utility;
-import com.veeriyaperumal.repository.Repository;
+import com.veeriyaperumal.railwaysreservation.Repository;
 
 public class BookTicketViewModel {
 	private final int MAX_DAYS = 8;// This refer how many advance days we can book from now current date+1 to

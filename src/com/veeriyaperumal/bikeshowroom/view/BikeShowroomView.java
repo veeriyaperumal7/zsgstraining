@@ -1,11 +1,11 @@
-package console_application.com.veeriyaperumal.bikeshowroom.view;
+package com.veeriyaperumal.bikeshowroom.view;
 
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-import console_application.com.veeriyaperumal.bikeshowroom.dto.Bike;
-import console_application.com.veeriyaperumal.bikeshowroom.viewmodel.BikeViewModel;
+import com.veeriyaperumal.bikeshowroom.dto.Bike;
+import com.veeriyaperumal.bikeshowroom.viewmodel.BikeViewModel;
 
 public class BikeShowroomView {
 	private Scanner read = new Scanner(System.in);

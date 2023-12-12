@@ -1,4 +1,4 @@
-package console_application.com.veeriyaperumal.bikeshowroom.dto;
+package com.veeriyaperumal.bikeshowroom.dto;
 
 public class Bike {
 	private String companyName;

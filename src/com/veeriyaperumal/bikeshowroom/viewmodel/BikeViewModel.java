@@ -1,13 +1,13 @@
-package console_application.com.veeriyaperumal.bikeshowroom.viewmodel;
+package com.veeriyaperumal.bikeshowroom.viewmodel;
 
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Stack;
 
-import console_application.com.veeriyaperumal.bikeshowroom.dto.Bike;
-import console_application.com.veeriyaperumal.bikeshowroom.view.BikeShowroomView;
-import console_application.com.veeriyaperumal.bikeshowroom.dto.UserOption;
-import console_application.com.veeriyaperumal.bikeshowroom.model.Repository;
+import com.veeriyaperumal.bikeshowroom.dto.Bike;
+import com.veeriyaperumal.bikeshowroom.view.BikeShowroomView;
+import com.veeriyaperumal.bikeshowroom.dto.UserOption;
+import com.veeriyaperumal.bikeshowroom.model.Repository;
 
 public class BikeViewModel {
 	private Bike bike;

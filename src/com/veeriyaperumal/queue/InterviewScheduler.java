@@ -1,4 +1,4 @@
-package console_application.com.veeriyaperumal.queue;
+package com.veeriyaperumal.queue;
 
 import java.util.InputMismatchException;
 import java.util.LinkedList;

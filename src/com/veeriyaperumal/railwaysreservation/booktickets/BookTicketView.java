@@ -5,18 +5,17 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 
-import com.veeriyaperumal.bikeshowroom.viewmodel.BikeViewModel;
-import com.veeriyaperumal.railwaysreservation.RunnerClass;
+import com.veeriyaperumal.railwaysreservation.RailwayReaservationApp;
 import com.veeriyaperumal.railwaysreservation.dto.Train;
 import com.veeriyaperumal.railwaysreservation.dto.Passenger;
 import com.veeriyaperumal.railwaysreservation.util.Utility;
 
 public class BookTicketView {
 	private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-	RunnerClass runnerClass;
+	RailwayReaservationApp runnerClass;
 	BookTicketViewModel bookTicketViewModel;
 
-	public BookTicketView(RunnerClass runnerClass) {
+	public BookTicketView(RailwayReaservationApp runnerClass) {
 		runnerClass = this.runnerClass;
 		bookTicketViewModel = new BookTicketViewModel(this);
 	}
@@ -75,7 +74,8 @@ public class BookTicketView {
 				break;
 			}
 		}
-		System.out.print("1 - Ticket Booking\n2 - Exit");
+		printSeperatorLine();
+		System.out.print("1 - Ticket Booking\n2 - Exit\nEnter your choice : ");
 		if (getValidInput(1, 2, "Choose valid option : ") == 1) {
 			showBookingClass();
 		} else {
@@ -84,7 +84,8 @@ public class BookTicketView {
 	}
 
 	private void showBookingClass() {
-		System.out.print("1 - Seater\n2 - Seater\n3 - Exit");
+		printSeperatorLine();
+		System.out.print("1 - Seater\n2 - Sleeper\n3 - Exit\nEnter your choice.");
 		int userChoice = getValidInput(1, 2, "Choose valid option : ");
 		if (userChoice == 1) {
 			bookTicketViewModel.bookSeater();
@@ -105,9 +106,9 @@ public class BookTicketView {
 		do {
 			try {
 				userEnteredChoice = Utility.getScanner().nextInt();
+				Utility.getScanner().nextLine();
 				if (!bookTicketViewModel.isValidBookingDate(userEnteredChoice)) {
 					showWrongSelectionMessage("Choose Valid Option : ");
-					Utility.getScanner().next();
 				} else {
 					break;
 				}
@@ -125,9 +126,9 @@ public class BookTicketView {
 		do {
 			try {
 				userEnteredChoice = Utility.getScanner().nextInt();
+				Utility.getScanner().nextLine();
 				if (!bookTicketViewModel.isValidTrain(userEnteredChoice)) {
 					showWrongSelectionMessage("Enter Valid Train No : ");
-					Utility.getScanner().next();
 				} else {
 					break;
 				}
@@ -145,9 +146,9 @@ public class BookTicketView {
 		do {
 			try {
 				userEnteredChoice = Utility.getScanner().nextInt();
+				Utility.getScanner().nextLine();
 				if (!(userEnteredChoice >= min) && !(userEnteredChoice <= max)) {
 					showWrongSelectionMessage(message);
-					Utility.getScanner().next();
 				} else {
 					break;
 				}
@@ -177,27 +178,79 @@ public class BookTicketView {
 		System.out.println(Utility.BOLD + Utility.YELLOW + message + Utility.RESET);
 	}
 
-	public void getPassengerData() {
-		Passenger passenger = new Passenger();
-		passenger.setName(getPassengerName());
-		passenger.setGender(getPassengerGender());
-		passenger.setMobileNumber(getPassengerMobileNumber());
+	LocalDate getPassengerDob() {
+		System.out.print("Enter your date of birth (yyyy-MM-dd): ");
+		String userEnteredDob = "";
+		LocalDate dob;
+
+		do {
+			try {
+				userEnteredDob = Utility.getScanner().nextLine();
+				dob = bookTicketViewModel.isValidDob(userEnteredDob);
+				if (dob == null) {
+					showWrongSelectionMessage("Enter Valid date of birth (yyyy-MM-dd): ");
+				} else {
+					break;
+				}
+			} catch (InputMismatchException e) {
+				showWrongSelectionMessage("Enter Valid date of birth (yyyy-MM-dd): ");
+				Utility.getScanner().next();
+				continue;
+			}
+		} while (true);
+
+		return dob;
 	}
 
-	private String getPassengerMobileNumber() {
-		// TODO Auto-generated method stub
-		return null;
+	String getPassengerPlace() {
+		System.out.print("Enter your place : ");
+		String userEnteredPlace = "";
+		do {
+			try {
+				userEnteredPlace = Utility.getScanner().nextLine();
+				if (!bookTicketViewModel.isValidPlace(userEnteredPlace)) {
+					showWrongSelectionMessage("Enter Valid  Place : ");
+				} else {
+					break;
+				}
+			} catch (InputMismatchException e) {
+				showWrongSelectionMessage("Enter Valid  Place : ");
+				Utility.getScanner().next();
+				continue;
+			}
+		} while (true);
+		return userEnteredPlace;
 	}
 
-	private String getPassengerGender() {
+	String getPassengerMobileNumber() {
+		System.out.print("Enter valid 10 digit mobile number : ");
+		String userEnteredMobileNumber = "";
+		do {
+			try {
+				userEnteredMobileNumber = Utility.getScanner().nextLine();
+				if (!bookTicketViewModel.isValidMobileNumber(userEnteredMobileNumber)) {
+					showWrongSelectionMessage("Enter Valid mobile Number : ");
+				} else {
+					break;
+				}
+			} catch (InputMismatchException e) {
+				showWrongSelectionMessage("Enter Valid mobile Number : ");
+				Utility.getScanner().next();
+				continue;
+			}
+		} while (true);
+		return userEnteredMobileNumber;
+	}
+
+	String getPassengerGender() {
 		int userEnteredChoice = -1;
-		System.out.println("1 - Transgender\n2 - Female\3 - Male\nEnter your choice : ");
+		System.out.println("1 - Transgender\n2 - Female\n3 - Male\nEnter your choice : ");
 		do {
 			try {
 				userEnteredChoice = Utility.getScanner().nextInt();
+				Utility.getScanner().nextLine();
 				if (!bookTicketViewModel.isValidGender(userEnteredChoice)) {
 					showWrongSelectionMessage("Choose a valid option : ");
-					Utility.getScanner().next();
 				} else {
 					break;
 				}
@@ -210,14 +263,15 @@ public class BookTicketView {
 		return (userEnteredChoice == 1) ? "Transgender" : (userEnteredChoice == 2) ? "Female" : "Male";
 	}
 
-	private String getPassengerName() {
+	String getPassengerName() {
+		printSeperatorLine();
+		System.out.print("\nEnter user name : ");
 		String userEnteredName = "";
 		do {
 			try {
 				userEnteredName = Utility.getScanner().nextLine();
 				if (!bookTicketViewModel.isValidName(userEnteredName)) {
 					showWrongSelectionMessage("Enter Valid User Name : ");
-					Utility.getScanner().next();
 				} else {
 					break;
 				}
@@ -230,4 +284,7 @@ public class BookTicketView {
 		return userEnteredName;
 	}
 
+	public void loadingMessage() {
+		System.out.print(Utility.BOLD + Utility.YELLOW + "LOADING..." + Utility.RESET);
+	}
 }

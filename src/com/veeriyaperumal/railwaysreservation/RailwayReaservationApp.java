@@ -5,15 +5,15 @@ import java.util.InputMismatchException;
 import com.veeriyaperumal.railwaysreservation.booktickets.BookTicketView;
 import com.veeriyaperumal.railwaysreservation.util.Utility;
 
-public class RunnerClass {
+public class RailwayReaservationApp {
 	BookTicketView bookTicketView;
 
-	public RunnerClass() {
+	public RailwayReaservationApp() {
 		bookTicketView = new BookTicketView(this);
 	}
 
 	public static void main(String[] args) {
-		RunnerClass obj = new RunnerClass();
+		RailwayReaservationApp obj = new RailwayReaservationApp();
 		obj.start();
 	}
 

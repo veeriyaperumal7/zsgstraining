@@ -76,4 +76,5 @@ public class JdbcConnection {
 	public void printErrorMessageWithQuery(String message, String query) {
 		System.out.print(Utility.BOLD + Utility.RED + message + " : " + Utility.YELLOW + query + Utility.RESET);
 	}
+	
 }

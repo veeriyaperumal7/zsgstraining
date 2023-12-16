@@ -6,7 +6,7 @@ import java.util.Date;
 public class Train {
 	private int trainNo, seaterAvailableCount, sleeperAvailableCount, seaterWaitingListAvailableCount,
 			seaterRacAvailableCount, sleeperWaitingListAvailableCount, sleeperRacAvailableCount, seaterCarraigeCount,
-			sleeperCarraigeCount, sleeperCountPerCarriage, seaterCountPerCarriage;
+			sleeperCarraigeCount, sleeperCountPerCarriage, seaterCountPerCarriage,tripId;
 
 	private String trainName, departurePlace, arrivalPlace;
 	private Date startDate, endDate;
@@ -171,6 +171,14 @@ public class Train {
 
 	public void setEndTime(Time endTime) {
 		this.endTime = endTime;
+	}
+
+	public int getTripId() {
+		return tripId;
+	}
+
+	public void setTripId(int tripId) {
+		this.tripId = tripId;
 	}
 
 }

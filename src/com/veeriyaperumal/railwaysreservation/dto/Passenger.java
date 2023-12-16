@@ -1,11 +1,11 @@
 package com.veeriyaperumal.railwaysreservation.dto;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Passenger {
 	private int passengerId,pnr;
 	private String name, gender, place, mobileNumber;
-	private Date dob;
+	private LocalDate dob;
 
 	public int getPassengerId() {
 		return passengerId;
@@ -47,11 +47,11 @@ public class Passenger {
 		this.mobileNumber = mobileNumber;
 	}
 
-	public Date getDob() {
+	public LocalDate getDob() {
 		return dob;
 	}
 
-	public void setDob(Date dob) {
+	public void setDob(LocalDate dob) {
 		this.dob = dob;
 	}
 

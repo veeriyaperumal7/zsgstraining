@@ -30,7 +30,7 @@ public class Passenger {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-
+	
 	public String getPlace() {
 		return place;
 	}

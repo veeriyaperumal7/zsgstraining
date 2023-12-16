@@ -107,7 +107,7 @@ public class Repository {
 		JSONParser jsonParser = new JSONParser();
 		try {
 			filePath = new File(".").getCanonicalPath()
-					+ "\\src\\console_application\\com\\veeriyaperumal\\bikeshowroom\\repository\\jsondata\\bikedata.json";
+					+ "\\src\\com\\veeriyaperumal\\bikeshowroom\\repository\\jsondata\\bikedata.json";
 		} catch (IOException e) {
 			e.printStackTrace();
 			bikeViewModel.terminateProgramWithMessage(

@@ -64,7 +64,7 @@ public class BookTicketViewModel {
 		if (passengerCount > availableSeatsInTrainCount) {
 			bookTicketView.printUserWarningMessage("Currently available ticket count is " + availableSeatsInTrainCount
 					+ ".\nSo are you okay with current ticket count ?\n1 - YES\n 2- NO");
-			if (bookTicketView.getValidInput(1, 2, "Choose valid option.") == 1) {
+			if (bookTicketView.getValidInput(1, 2, "Choose valid veriya option.") == 1) {
 				return availableSeatsInTrainCount;
 			} else {
 				return -1;
@@ -82,7 +82,7 @@ public class BookTicketViewModel {
 
 		for (int i = 1; i <= passengerCount; i++) {
 			if (userSelectedTrain.getSeaterAvailableCount() >= 1) {
-                
+				bookTicketView.getPassengerData();
 				userSelectedTrain.setSeaterAvailableCount(userSelectedTrain.getSeaterAvailableCount() - 1);
 			} else if (userSelectedTrain.getSeaterRacAvailableCount() >= 1) {
 
@@ -114,6 +114,17 @@ public class BookTicketViewModel {
 
 	public void setUserSelectedTrain(Train userSelectedTrain) {
 		this.userSelectedTrain = userSelectedTrain;
+	}
+
+	public boolean isValidName(String passsengerName) {
+		return true;
+	}
+
+	public boolean isValidGender(int userEnteredChoice) {
+		if (userEnteredChoice >= 1 && userEnteredChoice <= 3) {
+			return true;
+		}
+		return false;
 	}
 
 }

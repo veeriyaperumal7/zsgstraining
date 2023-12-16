@@ -8,6 +8,7 @@ import java.util.InputMismatchException;
 import com.veeriyaperumal.bikeshowroom.viewmodel.BikeViewModel;
 import com.veeriyaperumal.railwaysreservation.RunnerClass;
 import com.veeriyaperumal.railwaysreservation.dto.Train;
+import com.veeriyaperumal.railwaysreservation.dto.Passenger;
 import com.veeriyaperumal.railwaysreservation.util.Utility;
 
 public class BookTicketView {
@@ -176,6 +177,57 @@ public class BookTicketView {
 		System.out.println(Utility.BOLD + Utility.YELLOW + message + Utility.RESET);
 	}
 
-	
+	public void getPassengerData() {
+		Passenger passenger = new Passenger();
+		passenger.setName(getPassengerName());
+		passenger.setGender(getPassengerGender());
+		passenger.setMobileNumber(getPassengerMobileNumber());
+	}
+
+	private String getPassengerMobileNumber() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private String getPassengerGender() {
+		int userEnteredChoice = -1;
+		System.out.println("1 - Transgender\n2 - Female\3 - Male\nEnter your choice : ");
+		do {
+			try {
+				userEnteredChoice = Utility.getScanner().nextInt();
+				if (!bookTicketViewModel.isValidGender(userEnteredChoice)) {
+					showWrongSelectionMessage("Choose a valid option : ");
+					Utility.getScanner().next();
+				} else {
+					break;
+				}
+			} catch (InputMismatchException e) {
+				showWrongSelectionMessage("Choose a valid option : ");
+				Utility.getScanner().next();
+				continue;
+			}
+		} while (true);
+		return (userEnteredChoice == 1) ? "Transgender" : (userEnteredChoice == 2) ? "Female" : "Male";
+	}
+
+	private String getPassengerName() {
+		String userEnteredName = "";
+		do {
+			try {
+				userEnteredName = Utility.getScanner().nextLine();
+				if (!bookTicketViewModel.isValidName(userEnteredName)) {
+					showWrongSelectionMessage("Enter Valid User Name : ");
+					Utility.getScanner().next();
+				} else {
+					break;
+				}
+			} catch (InputMismatchException e) {
+				showWrongSelectionMessage("Enter Valid User Name : ");
+				Utility.getScanner().next();
+				continue;
+			}
+		} while (true);
+		return userEnteredName;
+	}
 
 }

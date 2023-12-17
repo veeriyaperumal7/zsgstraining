@@ -231,7 +231,10 @@ public class BookTicketViewModel {
 		this.userSelectedTrain = userSelectedTrain;
 	}
 
-	public boolean isValidName(String passsengerName) {
+	public boolean isValidName(String passengerName) {
+		if (passengerName.length() < 1) {
+			return false;
+		}
 		return true;
 	}
 
@@ -255,6 +258,9 @@ public class BookTicketViewModel {
 	}
 
 	public boolean isValidPlace(String userEnteredPlace) {
+		if (userEnteredPlace.length() < 1) {
+			return true;
+		}
 		return true;
 	}
 

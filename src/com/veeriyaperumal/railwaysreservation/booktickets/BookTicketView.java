@@ -25,6 +25,7 @@ public class BookTicketView {
 	}
 
 	private void printBookingDates() {
+		printSeperatorLine();
 		LocalDate currentDate = LocalDate.now();
 		for (int i = 1; i <= bookTicketViewModel.getMAX_DAYS(); i++) {
 			currentDate = currentDate.plusDays(1);

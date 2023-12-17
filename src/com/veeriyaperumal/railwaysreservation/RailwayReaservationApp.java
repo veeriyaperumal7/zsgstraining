@@ -4,12 +4,15 @@ import java.util.InputMismatchException;
 
 import com.veeriyaperumal.railwaysreservation.booktickets.BookTicketView;
 import com.veeriyaperumal.railwaysreservation.util.Utility;
+import com.veeriyaperumal.railwaysreservation.viewticket.ShowBookedTicketView;
 
 public class RailwayReaservationApp {
 	BookTicketView bookTicketView;
+	ShowBookedTicketView showBookedTicketView;
 
 	public RailwayReaservationApp() {
 		bookTicketView = new BookTicketView(this);
+		showBookedTicketView = new ShowBookedTicketView(this);
 	}
 
 	public static void main(String[] args) {
@@ -19,20 +22,24 @@ public class RailwayReaservationApp {
 
 	private void start() {
 		int userInput;
-		System.out.println(Utility.BOLD + Utility.CYAN + " ====================================================" + Utility.RESET);
 		System.out.println(
-				Utility.BOLD + Utility.CYAN + " |           " + Utility.ROSECOLOR + "WELCOME TO IRCTC" + Utility.CYAN + "              |" + Utility.RESET);
-		System.out.println(Utility.BOLD + Utility.CYAN + " ====================================================\n\n" + Utility.RESET);
+				Utility.BOLD + Utility.CYAN + " ====================================================" + Utility.RESET);
+		System.out.println(Utility.BOLD + Utility.CYAN + "            " + Utility.ROSECOLOR + "WELCOME TO IRCTC"
+				+ Utility.CYAN + "              " + Utility.RESET);
+		System.out.println(Utility.BOLD + Utility.CYAN + " ====================================================\n\n"
+				+ Utility.RESET);
 
 		do {
 			printFeatures();
 			userInput = getUserInput(1, 4);
 			chooseFeature(userInput);
 		} while (userInput != 4);
-		System.out.println(Utility.BOLD + Utility.CYAN + " ====================================================" + Utility.RESET);
 		System.out.println(
-				Utility.BOLD + Utility.CYAN + "      " + Utility.ROSECOLOR + "THANK YOU FOR VISITING US,SEE YOU SOON" + Utility.CYAN + "        ");
-		System.out.println(Utility.BOLD + Utility.CYAN + " ====================================================" + Utility.RESET);
+				Utility.BOLD + Utility.CYAN + " ====================================================" + Utility.RESET);
+		System.out.println(Utility.BOLD + Utility.CYAN + "      " + Utility.ROSECOLOR
+				+ "THANK YOU FOR VISITING US,SEE YOU SOON" + Utility.CYAN + "        ");
+		System.out.println(
+				Utility.BOLD + Utility.CYAN + " ====================================================" + Utility.RESET);
 
 	}
 
@@ -40,6 +47,10 @@ public class RailwayReaservationApp {
 		switch (userInput) {
 		case 1:
 			bookTicketView.showBooking();
+			break;
+
+		case 3:
+			showBookedTicketView.showBookedTicket();
 			break;
 		default:
 			break;
@@ -72,10 +83,9 @@ public class RailwayReaservationApp {
 		} while (true);
 		return userEnteredChoice;
 	}
-	
+
 	public static void showWrongSelectionMessage(String message) {
 		System.out.print(Utility.BOLD + Utility.RED + message + Utility.RESET);
 	}
-
 
 }

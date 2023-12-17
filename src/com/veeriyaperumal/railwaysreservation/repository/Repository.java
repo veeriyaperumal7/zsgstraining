@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.veeriyaperumal.railwaysreservation.dto.Passenger;
+import com.veeriyaperumal.railwaysreservation.dto.Ticket;
 import com.veeriyaperumal.railwaysreservation.dto.Train;
 import com.veeriyaperumal.railwaysreservation.model.JdbcConnection;
 
@@ -235,4 +236,92 @@ public class Repository {
 		return -1;
 
 	}
+
+	public void getTicketData(Ticket ticket, int pnr) {
+		ticket.setTripId(-1);
+		query = "SELECT * FROM booking_entry where pnr_no=" + pnr;
+		ResultSet result = JdbcConnection.getInstance().executeSelectQuery(query);
+		if (result == null) {
+			ticket = null;
+		} else {
+			try {
+				while (result.next()) {
+					ticket.setPnrNo(result.getInt("pnr_no"));
+					ticket.setTripId(result.getInt("trip_id"));
+					ticket.setPassengerId(result.getInt("passenger_id"));
+					ticket.setPassengerPaidAmount(result.getFloat("passenger_paid_amount"));
+					ticket.setPassengerTicketStatus(result.getString("passenger_ticket_status"));
+					ticket.setPassengerClass(result.getString("passenger_class"));
+					ticket.setJourneyStatus(result.getString("journey_status"));
+				}
+				Passenger passenger = getPassengerData(pnr);
+				Train train = getTripData(ticket.getTripId());
+				ticket.setPassengerName(passenger.getName());
+				ticket.setPassengerMobile(passenger.getMobileNumber());
+				ticket.setDeparturePlace(train.getDeparturePlace());
+				ticket.setArrivalPlace(train.getArrivalPlace());
+				ticket.setStartDate(train.getStartDate());
+				ticket.setStartTime(train.getStartTime());
+				ticket.setTrainName(train.getTrainName());
+				ticket.setTrainNo(train.getTrainNo());
+			} catch (SQLException e) {
+				ticket = null;
+				JdbcConnection.getInstance().printErrorMessageWithQuery("Error while getting Pnr data", query);
+				e.printStackTrace();
+			} finally {
+				JdbcConnection.getInstance().closeSQLConnection();
+			}
+		}
+	}
+
+	public Passenger getPassengerData(int passengerId) {
+		Passenger passenger = new Passenger();
+		query = "SELECT * FROM passenger where passenger_id=" + passengerId;
+		ResultSet result = JdbcConnection.getInstance().executeSelectQuery(query);
+		if (result == null) {
+			passenger = null;
+		} else {
+			try {
+				while (result.next()) {
+					passenger.setName(result.getString("passenger_name"));
+					passenger.setMobileNumber(result.getString("passenger_mobile"));
+				}
+			} catch (SQLException e) {
+				passenger = null;
+				JdbcConnection.getInstance().printErrorMessageWithQuery("Error while getting Pnr data", query);
+				e.printStackTrace();
+			} finally {
+				JdbcConnection.getInstance().closeSQLConnection();
+			}
+		}
+		return passenger;
+	}
+
+	public Train getTripData(int tripId) {
+		Train train = new Train();
+		query = "SELECT * FROM trip_entry where trip_id=" + tripId;
+		ResultSet result = JdbcConnection.getInstance().executeSelectQuery(query);
+		if (result == null) {
+			train = null;
+		} else {
+			try {
+				while (result.next()) {
+					train.setTrainNo(result.getInt("train_no"));
+					train.setTrainName(result.getString("train_name"));
+					train.setStartDate(result.getDate("travel_start_date"));
+					train.setStartTime(result.getTime("travel_start_time"));
+					train.setArrivalPlace(result.getString("arrival_place"));
+					train.setDeparturePlace(result.getString("departure_place"));
+				}
+			} catch (SQLException e) {
+				train = null;
+				JdbcConnection.getInstance().printErrorMessageWithQuery("Error while getting Pnr data", query);
+				e.printStackTrace();
+			} finally {
+				JdbcConnection.getInstance().closeSQLConnection();
+			}
+		}
+		return train;
+	}
+
 }

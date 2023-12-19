@@ -3,20 +3,23 @@ package com.veeriyaperumal.railwaysreservation;
 import java.util.InputMismatchException;
 
 import com.veeriyaperumal.railwaysreservation.booktickets.BookTicketView;
+import com.veeriyaperumal.railwaysreservation.cancelticket.CancelTicketView;
 import com.veeriyaperumal.railwaysreservation.util.Utility;
 import com.veeriyaperumal.railwaysreservation.viewticket.ShowBookedTicketView;
 
-public class RailwayReaservationApp {
+public class RailwayReservationApp {
 	BookTicketView bookTicketView;
 	ShowBookedTicketView showBookedTicketView;
+	CancelTicketView cancelTicketView;
 
-	public RailwayReaservationApp() {
+	public RailwayReservationApp() {
 		bookTicketView = new BookTicketView(this);
 		showBookedTicketView = new ShowBookedTicketView(this);
+		cancelTicketView = new CancelTicketView(this);
 	}
 
 	public static void main(String[] args) {
-		RailwayReaservationApp obj = new RailwayReaservationApp();
+		RailwayReservationApp obj = new RailwayReservationApp();
 		obj.start();
 	}
 
@@ -48,7 +51,9 @@ public class RailwayReaservationApp {
 		case 1:
 			bookTicketView.showBooking();
 			break;
-
+		case 2:
+			cancelTicketView.showCancellation();
+			break;
 		case 3:
 			showBookedTicketView.showBookedTicket();
 			break;
@@ -61,7 +66,7 @@ public class RailwayReaservationApp {
 		System.out.println("1 - Book Tickets");
 		System.out.println("2 - Cancel Tickets");
 		System.out.println("3 - Check Ticket Status");
-		System.out.println("4 - Exit");
+		System.out.print("4 - Exit\nChoose your option : ");
 	}
 
 	private int getUserInput(int minSelection, int maxSelection) {

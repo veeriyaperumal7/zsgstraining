@@ -69,7 +69,7 @@ public class BookTicketViewModel {
 		int availableSeatsInTrainCount = getTotalSeatsAvailableInSeater();
 		if (passengerCount > availableSeatsInTrainCount) {
 			bookTicketView.printUserWarningMessage("Currently available ticket count is " + availableSeatsInTrainCount
-					+ ".\nSo are you okay with current ticket count ?\n1 - YES\n 2- NO");
+					+ ".\nSo are you okay with current ticket count ?\n1 - YES\n2- NO");
 			if (bookTicketView.getValidInput(1, 2, "Choose valid option.") == 1) {
 				return availableSeatsInTrainCount;
 			} else {

@@ -5,17 +5,17 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 
-import com.veeriyaperumal.railwaysreservation.RailwayReaservationApp;
+import com.veeriyaperumal.railwaysreservation.RailwayReservationApp;
 import com.veeriyaperumal.railwaysreservation.dto.Train;
 import com.veeriyaperumal.railwaysreservation.dto.Passenger;
 import com.veeriyaperumal.railwaysreservation.util.Utility;
 
 public class BookTicketView {
 	private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-	RailwayReaservationApp runnerClass;
+	RailwayReservationApp runnerClass;
 	BookTicketViewModel bookTicketViewModel;
 
-	public BookTicketView(RailwayReaservationApp runnerClass) {
+	public BookTicketView(RailwayReservationApp runnerClass) {
 		runnerClass = this.runnerClass;
 		bookTicketViewModel = new BookTicketViewModel(this);
 	}

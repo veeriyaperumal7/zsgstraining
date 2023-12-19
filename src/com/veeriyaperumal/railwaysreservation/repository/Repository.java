@@ -254,7 +254,44 @@ public class Repository {
 					ticket.setPassengerClass(result.getString("passenger_class"));
 					ticket.setJourneyStatus(result.getString("journey_status"));
 				}
-				Passenger passenger = getPassengerData(pnr);
+				Passenger passenger = getPassengerData(ticket.getPassengerId());
+				Train train = getTripData(ticket.getTripId());
+				ticket.setPassengerName(passenger.getName());
+				ticket.setPassengerMobile(passenger.getMobileNumber());
+				ticket.setDeparturePlace(train.getDeparturePlace());
+				ticket.setArrivalPlace(train.getArrivalPlace());
+				ticket.setStartDate(train.getStartDate());
+				ticket.setStartTime(train.getStartTime());
+				ticket.setTrainName(train.getTrainName());
+				ticket.setTrainNo(train.getTrainNo());
+			} catch (SQLException e) {
+				ticket = null;
+				JdbcConnection.getInstance().printErrorMessageWithQuery("Error while getting Pnr data", query);
+				e.printStackTrace();
+			} finally {
+				JdbcConnection.getInstance().closeSQLConnection();
+			}
+		}
+	}
+
+	public void getTicketData(Ticket ticket, int pnr, String cancel) {
+		ticket.setTripId(-1);
+		query = "SELECT * FROM booking_entry where pnr_no=" + pnr + " and journey_status='CONFIRMED'";
+		ResultSet result = JdbcConnection.getInstance().executeSelectQuery(query);
+		if (result == null) {
+			ticket = null;
+		} else {
+			try {
+				while (result.next()) {
+					ticket.setPnrNo(result.getInt("pnr_no"));
+					ticket.setTripId(result.getInt("trip_id"));
+					ticket.setPassengerId(result.getInt("passenger_id"));
+					ticket.setPassengerPaidAmount(result.getFloat("passenger_paid_amount"));
+					ticket.setPassengerTicketStatus(result.getString("passenger_ticket_status"));
+					ticket.setPassengerClass(result.getString("passenger_class"));
+					ticket.setJourneyStatus(result.getString("journey_status"));
+				}
+				Passenger passenger = getPassengerData(ticket.getPassengerId());
 				Train train = getTripData(ticket.getTripId());
 				ticket.setPassengerName(passenger.getName());
 				ticket.setPassengerMobile(passenger.getMobileNumber());
@@ -322,6 +359,262 @@ public class Repository {
 			}
 		}
 		return train;
+	}
+
+	public void cancelTicket(Ticket ticket) {
+
+		int rowsAffected;
+		if (ticket.getPassengerClass().equals("SEATER")) {
+			if (ticket.getPassengerTicketStatus().equals("CNF")) {
+				query = "update trip_entry set seats_remaining_in_seater=seats_remaining_in_seater+1 where trip_id="
+						+ ticket.getTripId() + " and train_no=" + ticket.getTrainNo();
+				rowsAffected = JdbcConnection.getInstance().executeInsertOrUpdateQuery(query);
+				if (rowsAffected < 1) {
+					JdbcConnection.getInstance().printErrorMessageWithQuery("Error while update cancel ticket count",
+							query);
+				}
+				query = "update booking_entry set journey_status='CANCELLED' where pnr_no = " + ticket.getPnrNo()
+						+ " and trip_id=" + ticket.getTripId();
+				rowsAffected = JdbcConnection.getInstance().executeInsertOrUpdateQuery(query);
+				if (rowsAffected < 1) {
+					JdbcConnection.getInstance().printErrorMessageWithQuery("Error while update cancel ticket status",
+							query);
+				}
+				promoteTicketRacToConfirmation("Seater", ticket);
+				promoteTicketWaitingListToRac("Seater", ticket);
+
+			} else if (ticket.getPassengerTicketStatus().equals("RAC")) {
+				query = "update trip_entry set rac_remaining_in_seater=rac_remaining_in_seater+1 where trip_id="
+						+ ticket.getTripId() + " and train_no=" + ticket.getTrainNo();
+				rowsAffected = JdbcConnection.getInstance().executeInsertOrUpdateQuery(query);
+				if (rowsAffected < 1) {
+					JdbcConnection.getInstance().printErrorMessageWithQuery("Error while update cancel ticket count",
+							query);
+				}
+				query = "update booking_entry set journey_status='CANCELLED' where pnr_no = " + ticket.getPnrNo()
+						+ " and trip_id=" + ticket.getTripId();
+				rowsAffected = JdbcConnection.getInstance().executeInsertOrUpdateQuery(query);
+				if (rowsAffected < 1) {
+					JdbcConnection.getInstance().printErrorMessageWithQuery("Error while update cancel ticket status",
+							query);
+				}
+				promoteTicketWaitingListToRac("Seater", ticket);
+
+			} else {
+				query = "update trip_entry set waitinglist_remaining_in_seater=waitinglist_remaining_in_seater+1 where trip_id="
+						+ ticket.getTripId() + " and train_no=" + ticket.getTrainNo();
+				rowsAffected = JdbcConnection.getInstance().executeInsertOrUpdateQuery(query);
+				if (rowsAffected < 1) {
+					JdbcConnection.getInstance().printErrorMessageWithQuery("Error while update cancel ticket count",
+							query);
+				}
+				query = "update booking_entry set journey_status='CANCELLED' where pnr_no = " + ticket.getPnrNo()
+						+ " and trip_id=" + ticket.getTripId();
+				rowsAffected = JdbcConnection.getInstance().executeInsertOrUpdateQuery(query);
+				if (rowsAffected < 1) {
+					JdbcConnection.getInstance().printErrorMessageWithQuery("Error while update cancel ticket status",
+							query);
+				}
+			}
+		} else {
+			if (ticket.getPassengerTicketStatus().equals("CNF")) {
+				query = "update trip_entry set seats_remaining_in_sleeper=seats_remaining_in_sleeper+1 where trip_id="
+						+ ticket.getTripId() + " and train_no=" + ticket.getTrainNo();
+				rowsAffected = JdbcConnection.getInstance().executeInsertOrUpdateQuery(query);
+				if (rowsAffected < 1) {
+					JdbcConnection.getInstance().printErrorMessageWithQuery("Error while update cancel ticket count",
+							query);
+				}
+				query = "update booking_entry set journey_status='CANCELLED' where pnr_no = " + ticket.getPnrNo()
+						+ " and trip_id=" + ticket.getTripId();
+				rowsAffected = JdbcConnection.getInstance().executeInsertOrUpdateQuery(query);
+				if (rowsAffected < 1) {
+					JdbcConnection.getInstance().printErrorMessageWithQuery("Error while update cancel ticket status",
+							query);
+				}
+				promoteTicketRacToConfirmation("Sleeper", ticket);
+				promoteTicketWaitingListToRac("Sleeper", ticket);
+
+			} else if (ticket.getPassengerTicketStatus().equals("RAC")) {
+				query = "update trip_entry set rac_remaining_in_sleeper=rac_remaining_in_sleeper+1 where trip_id="
+						+ ticket.getTripId() + " and train_no=" + ticket.getTrainNo();
+				rowsAffected = JdbcConnection.getInstance().executeInsertOrUpdateQuery(query);
+				if (rowsAffected < 1) {
+					JdbcConnection.getInstance().printErrorMessageWithQuery("Error while update cancel ticket count",
+							query);
+				}
+				query = "update booking_entry set journey_status='CANCELLED' where pnr_no = " + ticket.getPnrNo()
+						+ " and trip_id=" + ticket.getTripId();
+				rowsAffected = JdbcConnection.getInstance().executeInsertOrUpdateQuery(query);
+				if (rowsAffected < 1) {
+					JdbcConnection.getInstance().printErrorMessageWithQuery("Error while update cancel ticket status",
+							query);
+				}
+				promoteTicketWaitingListToRac("Sleeper", ticket);
+
+			} else {
+				query = "update trip_entry set waitinglist_remaining_in_sleeper=waitinglist_remaining_in_sleeper+1 where trip_id="
+						+ ticket.getTripId() + " and train_no=" + ticket.getTrainNo();
+				rowsAffected = JdbcConnection.getInstance().executeInsertOrUpdateQuery(query);
+				if (rowsAffected < 1) {
+					JdbcConnection.getInstance().printErrorMessageWithQuery("Error while update cancel ticket count",
+							query);
+				}
+				query = "update booking_entry set journey_status='CANCELLED' where pnr_no = " + ticket.getPnrNo()
+						+ " and trip_id=" + ticket.getTripId();
+				rowsAffected = JdbcConnection.getInstance().executeInsertOrUpdateQuery(query);
+				if (rowsAffected < 1) {
+					JdbcConnection.getInstance().printErrorMessageWithQuery("Error while update cancel ticket status",
+							query);
+				}
+			}
+		}
+	}
+
+	private void promoteTicketRacToConfirmation(String trainClass, Ticket ticket) {
+		int rowsAffected;
+		if (trainClass.equals("Seater")) {
+			query = "select * from booking_entry where passenger_ticket_status='RAC' and trip_id=" + ticket.getTripId()
+					+ " and journey_status='CONFIRMED' and passenger_class='SEATER'";
+			ResultSet result = JdbcConnection.getInstance().executeSelectQuery(query);
+			if (result == null) {
+				return;
+			} else {
+				try {
+					while (result.next()) {
+						query = "update booking_entry set passenger_ticket_status='CNF' where pnr_no="
+								+ result.getInt("pnr_no");
+						rowsAffected = JdbcConnection.getInstance().executeInsertOrUpdateQuery(query);
+						if (rowsAffected < 1) {
+							JdbcConnection.getInstance()
+									.printErrorMessageWithQuery("Error while change ticket rac to cnf", query);
+						}
+						query = "update trip_entry set rac_remaining_in_seater=rac_remaining_in_seater+1 where trip_id="
+								+ ticket.getTripId() + " and train_no=" + ticket.getTrainNo();
+						rowsAffected = JdbcConnection.getInstance().executeInsertOrUpdateQuery(query);
+						if (rowsAffected < 1) {
+							JdbcConnection.getInstance().printErrorMessageWithQuery(
+									"Error while update rac count after ticet cancelled.", query);
+						}
+					}
+				} catch (SQLException e) {
+
+					JdbcConnection.getInstance().printErrorMessageWithQuery("Error while moving ticket rac to cnf",
+							query);
+					e.printStackTrace();
+				} finally {
+					JdbcConnection.getInstance().closeSQLConnection();
+				}
+			}
+		} else {
+			query = "select * from booking_entry where passenger_ticket_status='RAC' and trip_id=" + ticket.getTripId()
+					+ " and journey_status='CONFIRMED' and passenger_class='SLEEPER'";
+			ResultSet result = JdbcConnection.getInstance().executeSelectQuery(query);
+			if (result == null) {
+				return;
+			} else {
+				try {
+					while (result.next()) {
+						query = "update booking_entry set passenger_ticket_status='CNF' where pnr_no="
+								+ result.getInt("pnr_no");
+						rowsAffected = JdbcConnection.getInstance().executeInsertOrUpdateQuery(query);
+						if (rowsAffected < 1) {
+							JdbcConnection.getInstance()
+									.printErrorMessageWithQuery("Error while change ticket rac to cnf", query);
+						}
+						query = "update trip_entry set rac_remaining_in_sleeper=rac_remaining_in_sleeper+1 where trip_id="
+								+ ticket.getTripId() + " and train_no=" + ticket.getTrainNo();
+						rowsAffected = JdbcConnection.getInstance().executeInsertOrUpdateQuery(query);
+						if (rowsAffected < 1) {
+							JdbcConnection.getInstance().printErrorMessageWithQuery(
+									"Error while update rac count after ticet cancelled.", query);
+						}
+						break;
+					}
+				} catch (SQLException e) {
+
+					JdbcConnection.getInstance().printErrorMessageWithQuery("Error while moving ticket rac to cnf",
+							query);
+					e.printStackTrace();
+				} finally {
+					JdbcConnection.getInstance().closeSQLConnection();
+				}
+			}
+		}
+	}
+
+	private void promoteTicketWaitingListToRac(String trainClass, Ticket ticket) {
+		int rowsAffected;
+		if (trainClass.equals("Seater")) {
+			query = "select * from booking_entry where passenger_ticket_status='WL' and trip_id=" + ticket.getTripId()
+					+ " and journey_status='CONFIRMED' and passenger_class='SEATER'";
+			ResultSet result = JdbcConnection.getInstance().executeSelectQuery(query);
+			if (result == null) {
+				return;
+			} else {
+				try {
+					while (result.next()) {
+						query = "update booking_entry set passenger_ticket_status='RAC' where pnr_no="
+								+ result.getInt("pnr_no");
+						rowsAffected = JdbcConnection.getInstance().executeInsertOrUpdateQuery(query);
+						if (rowsAffected < 1) {
+							JdbcConnection.getInstance()
+									.printErrorMessageWithQuery("Error while change ticket waitinglist to rac", query);
+						}
+						query = "update trip_entry set waitinglist_remaining_in_seater=waitinglist_remaining_in_seater+1 where trip_id="
+								+ ticket.getTripId() + " and train_no=" + ticket.getTrainNo();
+						rowsAffected = JdbcConnection.getInstance().executeInsertOrUpdateQuery(query);
+						if (rowsAffected < 1) {
+							JdbcConnection.getInstance().printErrorMessageWithQuery(
+									"Error while update rac count after ticet cancelled.", query);
+						}
+						break;
+					}
+				} catch (SQLException e) {
+
+					JdbcConnection.getInstance()
+							.printErrorMessageWithQuery("Error while moving ticket waitinglist to rac", query);
+					e.printStackTrace();
+				} finally {
+					JdbcConnection.getInstance().closeSQLConnection();
+				}
+			}
+		} else {
+			query = "select * from booking_entry where passenger_ticket_status='WL' and trip_id=" + ticket.getTripId()
+					+ " and journey_status='CONFIRMED' and passenger_class='SLEEPER'";
+			ResultSet result = JdbcConnection.getInstance().executeSelectQuery(query);
+			if (result == null) {
+				return;
+			} else {
+				try {
+					while (result.next()) {
+						query = "update booking_entry set passenger_ticket_status='RAC' where pnr_no="
+								+ result.getInt("pnr_no");
+						rowsAffected = JdbcConnection.getInstance().executeInsertOrUpdateQuery(query);
+
+						if (rowsAffected < 1) {
+							JdbcConnection.getInstance()
+									.printErrorMessageWithQuery("Error while moving ticket waitinglist to rac", query);
+						}
+						query = "update trip_entry set waitinglist_remaining_in_sleeper=waitinglist_remaining_in_sleeper+1 where trip_id="
+								+ ticket.getTripId() + " and train_no=" + ticket.getTrainNo();
+						rowsAffected = JdbcConnection.getInstance().executeInsertOrUpdateQuery(query);
+						if (rowsAffected < 1) {
+							JdbcConnection.getInstance().printErrorMessageWithQuery(
+									"Error while update rac count after ticet cancelled.", query);
+						}
+						break;
+					}
+				} catch (SQLException e) {
+
+					JdbcConnection.getInstance()
+							.printErrorMessageWithQuery("Error while moving ticket waitinglist to rac", query);
+					e.printStackTrace();
+				} finally {
+					JdbcConnection.getInstance().closeSQLConnection();
+				}
+			}
+		}
 	}
 
 }

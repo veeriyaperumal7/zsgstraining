@@ -1,0 +1,36 @@
+SELECT * FROM railwayreservation.trip_entry;
+use railwayreservation;
+-- INSERT INTO railwayreservation.trip_entry (
+--     train_no, 
+--     train_name, 
+--     travel_start_date, 
+--     travel_start_time, 
+--     travel_end_date, 
+--     travel_end_time, 
+--     trip_status, 
+--     seats_remaining_in_seater, 
+--     rac_remaining_in_seater, 
+--     waitinglist_remaining_in_seater, 
+--     seats_remaining_in_sleeper, 
+--     rac_remaining_in_sleeper, 
+--     waitinglist_remaining_in_sleeper, 
+--     maximum_rac_count, 
+--     maximum_waitinglist_count, 
+--     seater_fair, 
+--     sleeper_fair, 
+--     departure_place, 
+--     arrival_place
+-- )
+-- VALUES
+-- ('1001', 'NELLAI EXPRESS', DATE_ADD('2023-12-20', INTERVAL 1 DAY), '06:00:00', DATE_ADD('2023-12-20', INTERVAL 1 DAY), '23:00:00', 'ONLINE', '10', '5', '3', '10', '5', '3', '5', '3', '230.00', '540.00', 'TIRUNELVELI', 'CHENNAI'),
+-- ('1002', 'CHENNAI EGMORE EXPRESS', DATE_ADD('2023-12-20', INTERVAL 1 DAY), '05:00:00', DATE_ADD('2023-12-20', INTERVAL 1 DAY), '21:00:00', 'ONLINE', '10', '5', '3', '10', '5', '3', '5', '3', '230.00', '540.00', 'CHENNAI', 'TIRUNELVELI'),
+-- ('1001', 'NELLAI EXPRESS', DATE_ADD('2023-12-20', INTERVAL 2 DAY), '06:00:00', DATE_ADD('2023-12-20', INTERVAL 2 DAY), '23:00:00', 'ONLINE', '10', '5', '3', '10', '5', '3', '5', '3', '230.00', '540.00', 'TIRUNELVELI', 'CHENNAI'),
+-- ('1002', 'CHENNAI EGMORE EXPRESS', DATE_ADD('2023-12-20', INTERVAL 2 DAY), '05:00:00', DATE_ADD('2023-12-20', INTERVAL 2 DAY), '21:00:00', 'ONLINE', '10', '5', '3', '10', '5', '3', '5', '3', '230.00', '540.00', 'CHENNAI', 'TIRUNELVELI'),
+-- ('1001', 'NELLAI EXPRESS', DATE_ADD('2023-12-20', INTERVAL 3 DAY), '06:00:00', DATE_ADD('2023-12-20', INTERVAL 3 DAY), '23:00:00', 'ONLINE', '10', '5', '3', '10', '5', '3', '5', '3', '230.00', '540.00', 'TIRUNELVELI', 'CHENNAI'),
+-- ('1002', 'CHENNAI EGMORE EXPRESS', DATE_ADD('2023-12-20', INTERVAL 3 DAY), '05:00:00', DATE_ADD('2023-12-20', INTERVAL 3 DAY), '21:00:00', 'ONLINE', '10', '5', '3', '10', '5', '3', '5', '3', '230.00', '540.00', 'CHENNAI', 'TIRUNELVELI'),
+-- ('1001', 'NELLAI EXPRESS', DATE_ADD('2023-12-20', INTERVAL 4 DAY), '06:00:00', DATE_ADD('2023-12-20', INTERVAL 4 DAY), '23:00:00', 'ONLINE', '10', '5', '3', '10', '5', '3', '5', '3', '230.00', '540.00', 'TIRUNELVELI', 'CHENNAI'),
+-- ('1002', 'CHENNAI EGMORE EXPRESS', DATE_ADD('2023-12-20', INTERVAL 4 DAY), '05:00:00', DATE_ADD('2023-12-20', INTERVAL 4 DAY), '21:00:00', 'ONLINE', '10', '5', '3', '10', '5', '3', '5', '3', '230.00', '540.00', 'CHENNAI', 'TIRUNELVELI'),
+-- ('1001', 'NELLAI EXPRESS', DATE_ADD('2023-12-20', INTERVAL 5 DAY), '06:00:00', DATE_ADD('2023-12-20', INTERVAL 5 DAY), '23:00:00', 'ONLINE', '10', '5', '3', '10', '5', '3', '5', '3', '230.00', '540.00', 'TIRUNELVELI', 'CHENNAI'),
+-- ('1002', 'CHENNAI EGMORE EXPRESS', DATE_ADD('2023-12-20', INTERVAL 5 DAY), '05:00:00', DATE_ADD('2023-12-20', INTERVAL 5 DAY), '21:00:00', 'ONLINE', '10', '5', '3', '10', '5', '3', '5', '3', '230.00', '540.00', 'CHENNAI', 'TIRUNELVELI'),
+-- ('1001', 'NELLAI EXPRESS', DATE_ADD('2023-12-20', INTERVAL 6 DAY), '06:00:00', DATE_ADD('2023-12-20', INTERVAL 6 DAY), '23:00:00', 'ONLINE', '10', '5', '3', '10', '5', '3', '5', '3', '230.00', '540.00', 'TIRUNELVELI', 'CHENNAI'),
+-- ('1002', 'CHENNAI EGMORE EXPRESS', DATE_ADD('2023-12-20', INTERVAL 6 DAY), '05:00:00', DATE_ADD('2023-12-20', INTERVAL 6 DAY), '21:00:00', 'ONLINE', '10', '5', '3', '10', '5', '3', '5', '3', '230.00', '540.00', 'CHENNAI', 'TIRUNELVELI');

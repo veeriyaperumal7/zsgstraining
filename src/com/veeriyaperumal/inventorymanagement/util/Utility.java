@@ -19,7 +19,7 @@ public class Utility {
 	}
 
 	public static void printSeperatorLine() {
-		System.out.println(Utility.BOLD + Utility.CYAN + "\n====================================================\n"
+		System.out.println(Utility.BOLD + Utility.CYAN + "\n==================================================================================================================================\n"
 				+ Utility.RESET);
 	}
 

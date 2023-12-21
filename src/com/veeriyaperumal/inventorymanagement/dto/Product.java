@@ -1,6 +1,6 @@
 package com.veeriyaperumal.inventorymanagement.dto;
 
-public class Product {
+public class Product implements Comparable<Product> {
 	private String productName;
 	private float price;
 	private int quantity, id;
@@ -44,5 +44,10 @@ public class Product {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	@Override
+	public int compareTo(Product o) {
+		return this.id - o.id;
 	}
 }

@@ -25,7 +25,7 @@ public class AddProductView {
 		Utility.printSeperatorLine();
 	}
 
-	private String getProductUnit() {
+	public String getProductUnit() {
 		System.out.print("Enter your Product Unit : ");
 		String userEnteredProductUnit = "";
 		do {
@@ -45,7 +45,7 @@ public class AddProductView {
 		return userEnteredProductUnit;
 	}
 
-	private float getProductPrice() {
+	public float getProductPrice() {
 		System.out.print("Enter your Product price : ");
 		float userEnteredChoice = -1f;
 		do {
@@ -66,7 +66,7 @@ public class AddProductView {
 		return userEnteredChoice;
 	}
 
-	private String getProductName() {
+	public String getProductName() {
 		System.out.print("Enter your Product Name : ");
 		String userEnteredProduct = "";
 		do {

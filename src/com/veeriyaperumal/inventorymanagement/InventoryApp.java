@@ -1,4 +1,4 @@
-package com.veeriyaperumal.inventorymanagement.dto;
+package com.veeriyaperumal.inventorymanagement;
 
 import java.util.InputMismatchException;
 

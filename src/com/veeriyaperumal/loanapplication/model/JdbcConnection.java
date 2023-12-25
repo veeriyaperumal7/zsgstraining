@@ -22,6 +22,7 @@ public class JdbcConnection {
 	public static JdbcConnection getInstance() {
 		if (jdbcConnection == null) {
 			jdbcConnection = new JdbcConnection();
+			jdbcConnection.openSQLConnection();
 		}
 		return jdbcConnection;
 	}
@@ -45,7 +46,7 @@ public class JdbcConnection {
 	}
 
 	public ResultSet executeSelectQuery(String query) {
-		openSQLConnection();
+		//openSQLConnection();
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(query);
 			return preparedStatement.executeQuery();
@@ -57,7 +58,7 @@ public class JdbcConnection {
 	}
 
 	public int executeInsertOrUpdateQuery(String query) {
-		openSQLConnection();
+		//openSQLConnection();
 		try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
 			int rowsAffected = preparedStatement.executeUpdate();
 			return rowsAffected;

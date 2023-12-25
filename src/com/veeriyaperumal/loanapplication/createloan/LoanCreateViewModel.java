@@ -89,6 +89,7 @@ public class LoanCreateViewModel {
 		} else {
 			loanCreateView.printUserWarningMessage("Customer data not saved...");
 		}
+		loanCreateView.printSeperatorLine();
 	}
 
 	void createLoan() {
@@ -105,6 +106,7 @@ public class LoanCreateViewModel {
 		} else {
 			loanCreateView.printUserWarningMessage("Loan data not saved...");
 		}
+		loanCreateView.printSeperatorLine();
 	}
 
 	private float calculateInterest(float loanAmount, float interestRate) {
@@ -119,7 +121,6 @@ public class LoanCreateViewModel {
 	void getCustomerList() {
 		customerList = Repository.getInstance().getCustomerList();
 		loanCreateView.printCustomerList(customerList);
-
 	}
 
 	public boolean isValidCustomerId(int customerId) {

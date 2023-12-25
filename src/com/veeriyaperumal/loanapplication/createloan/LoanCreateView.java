@@ -17,6 +17,7 @@ public class LoanCreateView {
 	}
 
 	public void startCredit() {
+		printSeperatorLine();
 		switch (chooseCustomer()) {
 		case "New Customer":
 			loanCreateViewModel.createCustomer();
@@ -220,7 +221,8 @@ public class LoanCreateView {
 	}
 
 	public void printSeperatorLine() {
-		System.out.println(Utility.BOLD + Utility.CYAN + "\n====================================================\n"
+		System.out.println(Utility.BOLD + Utility.CYAN
+				+ "\n===========================================================================================================================================================\n"
 				+ Utility.RESET);
 	}
 
@@ -261,6 +263,7 @@ public class LoanCreateView {
 	}
 
 	private void getChoosenCustomerId() {
+		System.out.print("Enter Customer Id : ");
 		int userEnteredId = -1;
 		do {
 			try {
